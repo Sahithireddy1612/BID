@@ -50,7 +50,7 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required><br><br>
         <button type="submit">Login</button>
-        <p>Don't have an account then <a href="../BID/signup.html">create account</a></p>
+        <p>Don't have an account then <a href="../jsproject/signup.html">create account</a></p>
     </form>
     </div>
   
@@ -74,7 +74,7 @@
                     localStorage.setItem("users", JSON.stringify(users));
 
                     alert("Login Successful");
-                    window.location.href = "file:///C:/Users/sahit/OneDrive/Attachments/BID/auctionafterlogin.html"; 
+                    window.location.href = "auctionafterlogin.html"; 
                 } else {
                     alert("Invalid email or password. Please try again.");
                 }

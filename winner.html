@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Winner Information</title>
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+        .body {
+            background-color: cadetblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container{
+           height: 70px;
+           width: 1300px;
+           margin-left: 180px;
+           background-color: cornflowerblue;
+           position: sticky;
+           top: 0px;
+           z-index: 100;
+          
+       }
+       .img{
+           height: 90px;
+           width: 100px;
+           margin-top: -20px;
+           position: sticky;
+           top: 0px;
+           z-index: 100;
+
+       }
+      
+       .container_2{
+           height: 100px;
+           width: 1300px;
+           margin-left: 180px;
+           margin-top: 90px;
+           background-color: thistle;
+           position: sticky;
+           top: 70px;
+           z-index: 90;
+       }
+       
+       
+      
+        .container_3 {
+            width: 80%;
+            max-width: 1200px;
+            background-color: burlywood;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .winner-info {
+            width: calc(50% - 10px);
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .selected-painting {
+            width: calc(50% - 10px);
+            border: 2px solid white;
+            border-radius: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .winner-info h2,
+        .selected-painting h2 {
+            color: brown;
+            margin-top: 0;
+        }
+        .winner-info p {
+            margin: 5px 0;
+        }
+        .selected-painting img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="img">
+    <img src="../jsproject/LOGO1.WEBP" style="height: 170px; width: 180px;">
+        </div>
+        <div class="container">
+            <h2 style="color: white; margin-left: 30px; margin-top: -170px;">BID-ONLINE AUCTION PLATFROM</h2>
+            <P style="color: white;margin-left: 30px;">A SECURE TRANSPARENT PLATFORM FOR CONDUCTING ELECTRONIC AUCTIONS RECOGNISED BY THE GOVERNMENT</P>
+
+        </div>
+        <div class="container_2">
+        
+        </div>
+         <div class="body">
+    <div class="container_3">
+        <div class="winner-info" id="winnerInfoContainer">
+            <h2>Winner Information</h2>
+            </div>
+          
+        <div class="selected-painting" id="selectedPaintingContainer">
+            <h2>Selected Painting</h2>
+           
+        </div>
+    </div>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const winnerInfoContainer = document.getElementById('winnerInfoContainer');
+            const selectedPaintingContainer = document.getElementById('selectedPaintingContainer');
+            const winnerInfo = JSON.parse(localStorage.getItem('winnerInfo'));
+            const selectedCardHTML = localStorage.getItem('selectedCardHTML');
+
+            if (winnerInfo) {
+                winnerInfoContainer.innerHTML = `
+                    <h2>Winner Information</h2>
+                    <p>Name: ${winnerInfo.name}</p>
+                    <p>Email: ${winnerInfo.email}</p>
+                    <p>Phone: ${winnerInfo.phone}</p>
+                    <p>ID: ${winnerInfo.id}</p>
+                    <p>Bid Amount: $${winnerInfo.bidAmount.toFixed(2)}</p>
+                `;
+            } else {
+                winnerInfoContainer.innerHTML = '<p>No winner information available.</p>';
+            }
+
+            if (selectedCardHTML) {
+                selectedPaintingContainer.innerHTML = selectedCardHTML;
+            } else {
+                selectedPaintingContainer.innerHTML = '<p>No selected painting available.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

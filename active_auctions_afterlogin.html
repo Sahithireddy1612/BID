@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Active Auctions</title>
+</head>
+<body>
+    <div class="painting-card" id="painting1">
+        <h2>Painting 1</h2>
+        <p>Description of Painting 1</p>
+        <p>Start Bid: $100</p>
+        <button class="bid-btn" onclick="redirectToBiddingPage('painting1', 100)">Bid</button>
+    </div>
+    <div class="painting-card" id="painting2">
+        <h2>Painting 2</h2>
+        <p>Description of Painting 2</p>
+        <p>Start Bid: $150</p>
+        <button class="bid-btn" onclick="redirectToBiddingPage('painting2', 150)">Bid</button>
+    </div>
+
+    <script>
+        function redirectToBiddingPage(paintingId, startBid) {
+            localStorage.setItem('selectedPaintingId', paintingId);
+            localStorage.setItem('startBid', startBid);
+            window.location.href = 'bidding1.html';
+        }
+    </script>
+</body>
+</html>

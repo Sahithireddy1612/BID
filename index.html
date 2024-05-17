@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>BID-IT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../BID/auction.css">
+
+
+</head>
+<body>
+    <div class="img">
+    <img src="../jsproject/LOGO1.WEBP" style="height: 170px; width: 180px; border-radius: 30px;">
+    </div>
+    <div class="container">
+        <h2 style="color: white; margin-left: 30px; margin-top: -170px;">BID-ONLINE AUCTION PLATFROM</h2>
+        <P style="color: white;margin-left: 30px;">A SECURE TRANSPARENT PLATFORM FOR CONDUCTING ELECTRONIC AUCTIONS RECOGNISED BY THE GOVERNMENT</P>
+        <button class="loginbtn">&#128100; LOGIN</button>
+        <button class="signupbtn">REGISTER</button>
+        <div class="nav-link  n_1" id="homeLink">Home</div>
+        <div class="nav-link  n_2" id="auctionLink">Active Auctions</div>
+        <div class="nav-link  n_3" id="completedLink">Auctions Completed</div>
+        <div class="nav-link  n_4" id="statusLink">Auctions Status</div>
+    </div>
+    <div class="container_2">
+    
+    </div>
+    <div class="container_3">
+        <div class="box-slider">
+            <div class="box" style="background-image: linear-gradient(75deg, coral,aqua);">
+                <img src="../jsproject/LOGO1.WEBP" style="width: 300px; height: 200px; border-radius: 100%; margin-top: 50px; margin-left: 50px;">
+                <h2 style=" margin-top: -220px; margin-left: 450px;">WELCOME TO <i style="color: orangered;">BID</i> ONLINE AUCTION PLATFORM</h2>
+                <h3 style="margin-left: 450px; color: white;">A Platform To BID And Buy The Greatest Paintings of All Time Worldwide</h3>
+                <p style="color: purple;;margin-left: 450px; font-size: 20px;">BID is an auction platform recognised by government to conduct online auctions for sale and purchase.<br>
+                It removes all barriers of geography,presence,time,space and small target audience propelled by a versatile,safe and secured engine
+            approved by National Informatics Centre.Many users have <br> witnessed multifold increase in revenue in auctions conducted over adiverse range.</p>
+            </div>
+            <div class="box" style="background-image: linear-gradient(75deg, skyblue,lightpink);">
+                <h3 style="color: blueviolet; text-align: center;">GLIMPSE OF ARTWORKS</h3>
+
+                <img src="../jsproject/painting4.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-top: -50px; margin-left: 50px;">
+                <img src="../jsproject/painting6.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-left: 100px; margin-top: 30px;">
+                <img src="../jsproject/painting7.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-left: 100px; margin-top: 30px;">
+                <img src="../jsproject/painting8.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-left: 100px; margin-top: 30px;">
+            
+            </div>
+           
+           
+            <div class="box" style="background-color: white;">
+                <img src="../jsproject/process2.jpeg" style="height: 300px; width: 500px; margin-left: 350px;"></div>
+          
+        </div>
+        <button class="prev-btn"><</button>
+        <button class="next-btn">></button>
+    
+        </div>
+
+
+        <div class="auction-status">
+            <div class="auction-box" id="auctionsToday">
+                <h3>Auctions Today</h3>
+                <p id="auctionsTodayCount">0</p>
+            </div>
+            <div class="auction-box" id="auctionsEndingToday">
+                <h3>Auctions Ending Today</h3>
+                <p id="auctionsEndingTodayCount">0</p>
+            </div>
+            <div class="auction-box" id="auctionsPublished">
+                <h3>Auctions Published</h3>
+                <p id="auctionsPublishedCount">0</p>
+            </div>
+            <div class="auction-box" id="auctionsAwarded">
+                <h3>Auctions Awarded</h3>
+                <p id="auctionsAwardedCount">0</p>
+            </div>
+        </div>
+        <div class="arrow-heading">
+            <h2>Auctions</h2>
+        </div>
+    
+        
+        <div class="painting-cards">
+
+           
+
+            
+                <div class="painting-card" id="painting1">
+                    <img src="../jsproject/painting1.jpeg" class="Painting 1">
+                    <h2 style="margin-left: 10px;">VINTAGE ROYAL COUPLE CANVAS</h2>
+                    <p style="margin-left: 10px;">Elegance Museum Outlet Old Masters Painting <br> size- 42 height X 35 width inch</p>
+                    <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                    <p style="margin-left: 10px;">Start Bid: $100</p>
+                    <div class="like-icon likeable">&#9825;</div>
+                    <button class="bid-btn" onclick="redirectToBiddingPage('painting1', 100)">Bid</button>
+                </div>
+                  
+                
+    
+                <div class="painting-card" id="painting2">
+                    <img src="../jsproject/painting3.jpeg" class="Painting 1">
+                    <h2 style="margin-left: 10px;">ROME MUSEUM CANVAS PAINTING</h2>
+                    <p style="margin-left: 10px;">Elegance modern rome museum outlet painting <br> size- 34.75 height X 24 width inch</p>
+                    <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                    <p style="margin-left: 10px;">Start Bid: $130</p>
+                    <div class="like-icon likeable">&#9825;</div>
+                    <button class="bid-btn" onclick="redirectToBiddingPage('painting2', 130)">Bid</button>
+            
+                </div>
+    
+                <div class="painting-card" id="painting3">
+                    <img src="../jsproject/painting4.jpeg" class="Painting 1">
+                    <h2 style="margin-left: 10px;">UMBRELLAS MODERN ABSTRACT PAINTING</h2>
+                    <p style="margin-left: 10px;">Elegance Abstract Modern Art Painting <br> size- 28 inch height X 24 width inch</p>
+                    <P style="margin-left: 10px;">BID TIMING- 15TH APRIL-20TH APRIL | 12PM IST</P>
+                    <p style="margin-left: 10px;">Start Bid: $150</p>
+                    <div class="like-icon likeable">&#9825;</div>
+                    <button class="bid-btn" onclick="redirectToBiddingPage('painting3', 150)">Bid</button>
+            
+                </div>                 
+    </div>
+
+    <div class="contact-info">
+        <h2>About Us</h2>
+        <h2>Terms of services</h2>
+        <h2>Editorial policy</h2>
+        <h2>Advertise</h2>
+        <h2>Private Policy</h2>
+        <p style="margin-left: 300px; margin-top: -240px;">Email: example@example.com</p>
+        <p style="margin-left: 300px;">Phone: +1234567890</p>
+        <div class="social-icons">
+            <h2 style="margin-left: 500px; margin-top: -100px; margin-bottom: 100px;">BID-AUCTION PLATFORM</h2>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+
+       
+        
+    <script src="../jsproject/auction.js">
+    
+    </script>
+
+
+</body>
+</html>

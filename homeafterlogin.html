@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BID-IT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+    body{
+        background-color: cadetblue;
+        overflow: scroll;
+    
+        
+    }
+    .container{
+        height: 70px;
+        width: 1300px;
+        margin-left: 180px;
+        background-color: cornflowerblue;
+        position: sticky;
+        top: 0px;
+        z-index: 100;
+       
+    }
+    .img{
+        height: 90px;
+        width: 100px;
+        margin-top: -20px;
+        position: sticky;
+        top: 0px;
+        z-index: 100;
+    
+    }
+    
+    .container_2{
+        height: 100px;
+        width: 1300px;
+        margin-left: 180px;
+        margin-top: 2px;
+        background-color: thistle;
+        position: sticky;
+        top: 70px;
+        z-index: 90;
+    }
+    
+    .container_3 {
+        margin-top: 100px;
+    position: relative; 
+    overflow: hidden; 
+    }
+    
+    .box-slider {
+    display: flex;
+    transition: transform 0.3s ease; 
+    }
+    
+    .box {
+    flex-shrink: 0; 
+    width: 1250px; 
+    height: 300px;
+    margin-right: 10px; 
+    margin-top: 20px;
+    }
+    
+    .prev-btn,
+    .next-btn {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background-color: rgba(255, 255, 255, 0.5); 
+    padding: 10px 15px; 
+    border: none; 
+    cursor: pointer; 
+    }
+    
+    .prev-btn {
+    left: 10px; 
+    }
+    
+    .next-btn {
+    right: 10px; 
+    }
+    .nav-link {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-bottom: 30px;
+        z-index: 100;
+        color: white;
+        background-color: thistle;
+        border-radius: 5px;
+        text-decoration: none;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        cursor: pointer; 
+    }
+    .nav-link:hover {
+        background-color: darkorange;
+    }
+    
+    .nav-link.hover-box {
+        background-color: darkorange;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    .n_1{
+        margin-right: 20px;
+        margin-left: 100px;
+        margin-top: 10px;
+        background-color: orange;
+    
+    }
+    .n_2{
+        margin-right: 20px;
+    }
+    .n_3{
+        margin-right: 20px;
+    }
+    .auction-status {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    
+    .auction-box {
+        width: 200px;
+        height: 100px;
+        background-color: tan;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.3s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    
+    .auction-box:hover {
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 2);
+    }
+    
+    .auction-box h3 {
+        margin-bottom: 5px;
+    }
+    
+    .arrow-heading {
+        margin-top: 100px;
+        margin-left: 50px;
+        position: relative;
+        display: inline-block;
+        padding: 10px 100px;
+        background: linear-gradient(75deg, #ff8000, #ffbf00);
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .arrow-heading::before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid #ffbf00;
+        transform: translateY(-50%);
+    }
+    
+    
+    .painting-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+        margin-top: 50px;
+    
+        
+    }
+    
+    .painting-card {
+        width: 300px;
+        height: 550px;
+        background-color: lavender;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        z-index: 50;
+    }
+    
+    .painting-card:hover {
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .painting-card img {
+        width: 200px;
+        height: 200px;
+        margin-left: 50px;
+        margin-top: 40px;
+        border-radius: 20px;
+        object-fit: cover;
+       
+    }
+    
+    .painting-details {
+        padding: 20px;
+    }
+    
+    .like-icon {
+        color: white;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: #333;
+        cursor: pointer;
+    }
+    
+    .card-buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: -60px;
+        padding: 50px  50px;
+        border-radius: 0 0 10px 10px;
+        z-index: 60;
+    }
+    
+    .bid-btn {
+    padding: 5px 25px;
+    background-color: burlywood;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+}
+
+.bid-btn:hover {
+    background-color: orange;
+}
+    
+    .contact-info {
+        background-color: #fff;
+        padding: 20px;
+        border: 2px solid black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px auto;
+        max-width: 1300px;
+        height: 250px;
+        margin-top: 100px;
+    }
+    
+    .social-icons {
+        display: inline-block;
+        margin-left: 300px;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+    
+    .social-icon {
+        font-size: 70px;
+        color: #333;
+        cursor: pointer;
+        transition: color 0.3s ease;
+        margin-left: 150px;
+        margin-top: 100px;
+    }
+    
+    .social-icon:hover {
+        color: #555;
+    }
+    .likeable.liked {
+        color: red;
+    }
+    
+    .user-info {
+        display: flex;
+        align-items: center;
+        margin-left: 1000px;
+    }
+    
+    .user-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        margin-right: 10px;
+        margin-left: 900px;
+        font-size: 50px;
+    }
+    
+    .user-details{
+        color: white;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: -50px;
+        margin-left: 60px;
+    }
+    </style>
+    
+    
+
+</head>
+<body>
+    <div class="img">
+    <img src="../jsproject/LOGO1.WEBP" style="height: 170px; width: 180px;">
+    </div>
+    <div class="container">
+        <h2 style="color: white; margin-left: 30px; margin-top: -170px;">BID-ONLINE AUCTION PLATFROM</h2>
+        <P style="color: white;margin-left: 30px;">A SECURE TRANSPARENT PLATFORM FOR CONDUCTING ELECTRONIC AUCTIONS RECOGNISED BY THE GOVERNMENT</P>
+
+        <div class="user-icon" id="userInfo">
+            <i class="fas fa-user-circle"></i>
+            <h4 class="user-details">Username</h4>
+        </div>
+       
+        <div class="nav-link  n_1" id="homeLink">Home</div>
+        <div class="nav-link  n_2" id="auctionLink">Active Auctions</div>
+        <div class="nav-link  n_3" id="completedLink">Auctions Completed</div>
+        <div class="nav-link  n_4" id="statusLink">Auctions Status</div>
+    </div>
+    <div class="container_2">
+    
+    </div>
+    <div class="container_3">
+        <div class="box-slider">
+            <div class="box" style="background-image: linear-gradient(75deg, coral,aqua);">
+                <img src="../jsproject/LOGO1.WEBP" style="width: 300px; height: 200px; border-radius: 100%; margin-top: 50px; margin-left: 50px;">
+                <h2 style=" margin-top: -220px; margin-left: 450px;">WELCOME TO <i style="color: orangered;">BID</i> ONLINE AUCTION PLATFORM</h2>
+                <h3 style="margin-left: 450px; color: white;">A Platform To BID And Buy The Greatest Paintings of All Time Worldwide</h3>
+                <p style="color: purple;;margin-left: 450px; font-size: 20px;">BID is an auction platform recognised by government to conduct online auctions for sale and purchase.<br>
+                It removes all barriers of geography,presence,time,space and small target audience propelled by a versatile,safe and secured engine
+            approved by National Informatics Centre.Many users have <br> witnessed multifold increase in revenue in auctions conducted over adiverse range.</p>
+            </div>
+            <div class="box" style="background-image: linear-gradient(75deg, skyblue,lightpink);">
+                <h3 style="color: blueviolet; text-align: center;">GLIMPSE OF ARTWORKS</h3>
+
+                <img src="../jsproject/painting4.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-top: -50px; margin-left: 50px;">
+                <img src="../jsproject/painting6.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-left: 100px; margin-top: 30px;">
+                <img src="../jsproject/painting7.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-left: 100px; margin-top: 30px;">
+                <img src="../jsproject/painting8.jpeg" style="height: 200px; width: 200px; border-radius: 100%; border: 2px solid black; margin-left: 100px; margin-top: 30px;">
+            
+            </div>
+            <div class="box" style="background-color: white;">
+            <img src="../jsproject/bid.webp" style="height: 300px; width: 1250px;"></div>
+            <div class="box" style="background-color: green;">
+                 <img src="../jsproject/process.webp" style="height: 300px; width: 1250px;"></div>
+            <div class="box" style="background-color: white;">
+                <img src="../jsproject/process2.jpeg" style="height: 300px; width: 500px; margin-left: 350px;"></div>
+          
+        </div>
+        <button class="prev-btn"><</button>
+        <button class="next-btn">></button>
+    
+        </div>
+
+
+        <div class="auction-status">
+            <div class="auction-box" id="auctionsToday">
+                <h3>Auctions Today</h3>
+                <p id="auctionsTodayCount">0</p>
+            </div>
+            <div class="auction-box" id="auctionsEndingToday">
+                <h3>Auctions Ending Today</h3>
+                <p id="auctionsEndingTodayCount">0</p>
+            </div>
+            <div class="auction-box" id="auctionsPublished">
+                <h3>Auctions Published</h3>
+                <p id="auctionsPublishedCount">0</p>
+            </div>
+            <div class="auction-box" id="auctionsAwarded">
+                <h3>Auctions Awarded</h3>
+                <p id="auctionsAwardedCount">0</p>
+            </div>
+        </div>
+        <div class="arrow-heading">
+            <h2>Auctions</h2>
+        </div>
+    
+        
+        <div class="painting-cards">
+        
+            
+                <div class="painting-card" id="painting1">
+                    <img src="../jsproject/painting1.jpeg" class="Painting 1">
+                    <h2 style="margin-left: 10px;">VINTAGE ROYAL COUPLE CANVAS</h2>
+                    <p style="margin-left: 10px;">Elegance Museum Outlet Old Masters Painting <br> size- 42 height X 35 width inch</p>
+                    <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                    <p style="margin-left: 10px;">Start Bid: $100</p>
+                    <div class="like-icon likeable">&#9825;</div>
+                    <button class="bid-btn" onclick="redirectToBiddingPage('painting1', 100)">Bid</button>
+                </div>
+                  
+                
+    
+                <div class="painting-card" id="painting2">
+                    <img src="../jsproject/painting3.jpeg" class="Painting 1">
+                    <h2 style="margin-left: 10px;">ROME MUSEUM CANVAS PAINTING</h2>
+                    <p style="margin-left: 10px;">Elegance modern rome museum outlet painting <br> size- 34.75 height X 24 width inch</p>
+                    <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                    <p style="margin-left: 10px;">Start Bid: $130</p>
+                    <div class="like-icon likeable">&#9825;</div>
+                    <button class="bid-btn" onclick="redirectToBiddingPage('painting2', 130)">Bid</button>
+            
+                </div>
+    
+                <div class="painting-card" id="painting3">
+                    <img src="../jsproject/painting4.jpeg" class="Painting 1">
+                    <h2 style="margin-left: 10px;">UMBRELLAS MODERN ABSTRACT PAINTING</h2>
+                    <p style="margin-left: 10px;">Elegance Abstract Modern Art Painting <br> size- 28 inch height X 24 width inch</p>
+                    <P style="margin-left: 10px;">BID TIMING- 15TH APRIL-20TH APRIL | 12PM IST</P>
+                    <p style="margin-left: 10px;">Start Bid: $150</p>
+                    <div class="like-icon likeable">&#9825;</div>
+                    <button class="bid-btn" onclick="redirectToBiddingPage('painting3', 150)">Bid</button>
+            
+                
+                </div>
+               
+
+   
+    
+              
+        
+    </div>
+
+    <div class="contact-info">
+        <h2>About Us</h2>
+        <h2>Terms of services</h2>
+        <h2>Editorial policy</h2>
+        <h2>Advertise</h2>
+        <h2>Private Policy</h2>
+        <p style="margin-left: 300px; margin-top: -240px;">Email: example@example.com</p>
+        <p style="margin-left: 300px;">Phone: +1234567890</p>
+        <div class="social-icons">
+            <h2 style="margin-left: 500px; margin-top: -100px; margin-bottom: 100px;">BID-AUCTION PLATFORM</h2>
+            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+        
+    <script src="../jsproject/auctionafterlogin.js">
+    
+    </script>
+    
+</body>
+</html>

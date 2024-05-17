@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BID-HOME</title>
+</head>
+<style>
+     body{
+            background-color: cadetblue;
+            overflow: scroll;
+        
+            
+        }
+        .container{
+            height: 70px;
+            width: 1300px;
+            margin-left: 180px;
+            background-color: cornflowerblue;
+            position: sticky;
+            top: 0px;
+            z-index: 100;
+           
+        }
+        .img{
+            height: 90px;
+            width: 100px;
+            margin-top: -20px;
+            position: sticky;
+            top: 0px;
+            z-index: 100;
+
+        }
+       
+        .container_2{
+            height: 100px;
+            width: 1300px;
+            margin-left: 180px;
+            margin-top: 90px;
+            background-color: thistle;
+            position: sticky;
+            top: 70px;
+            z-index: 90;
+        }
+        .loginbtn{
+            height: 40px;
+            width: 80px;
+            color: white;  
+            background-color: chocolate;
+            border-radius: 5px;
+            margin-left: 900px;
+            margin-top: -10px;
+
+        } 
+        .signupbtn{
+            height: 40px;
+            width: 90px;
+            color: white;  
+            background-color: chocolate;
+            border-radius: 5px;
+            margin-left: 900px;
+            margin-top: 10px;
+            z-index: 9999;
+            position: relative;
+        
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            z-index: 100;
+            color: white;
+            background-color: thistle;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            cursor: pointer; 
+        }
+        .nav-link:hover {
+            background-color: darkorange;
+        }
+        
+        .nav-link.hover-box {
+            background-color: darkorange;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .n_1{
+        
+            margin-right: 20px;
+            margin-left: -900px;
+            margin-top: 10px;
+
+        }
+        .n_2{
+            margin-right: 20px;
+        }
+        .n_3{
+            background-color: orange;
+            margin-right: 20px;
+        }
+        .container_3{
+            margin-top: 30px;
+            width: 1100px;
+            height: 200px;
+            border: 2px solid black;
+            background-color: white;
+        }
+        
+        
+</style>
+<body>
+    <div class="img">
+        <img src="../jsproject/LOGO1.WEBP" style="height: 170px; width: 180px;">
+        </div>
+        <div class="container">
+            <h2 style="color: white; margin-left: 30px; margin-top: -170px;">BID-ONLINE AUCTION PLATFROM</h2>
+            <P style="color: white;margin-left: 30px;">A SECURE TRANSPARENT PLATFORM FOR CONDUCTING ELECTRONIC AUCTIONS RECOGNISED BY THE GOVERNMENT</P>
+            <button class="loginbtn">&#128100; LOGIN</button>
+            <button class="signupbtn">REGISTER</button>
+            <div class="nav-link  n_1" id="homeLink">Home</div>
+            <div class="nav-link  n_2" id="auctionLink">Active Auctions</div>
+            <div class="nav-link  n_3" id="completedLink">Auctions Completed</div>
+            <div class="nav-link  n_4" id="statusLink">Auctions Status</div>
+        </div>
+        <div class="container_2">
+        
+        </div>
+
+
+        <div class="container_3">
+            <p style="color: orangered">AUCTION-ID : #123456</p>
+            <P>PAINTING-NAME: OLD DUTCH STILL LIFE PAINTING</P>
+            <P>START-BID: RS.5,678</P>
+            <P>BID-AMOUNT: RS.8,976 </P>
+            <P>BID-WINNER: D.MAHESH</P>
+        </div>
+        <div class="container_3">
+            <p style="color: orangered">AUCTION-ID : #198765</p>
+            <P>PAINTING-NAME: OLD INDIAN FARMER PAINTING</P>
+            <P>START-BID: RS.9,678</P>
+            <P>BID-AMOUNT: RS.12,976 </P>
+            <P>BID-WINNER: K.SRINIVAS</P>
+        </div>
+        <div class="container_3">
+            <p style="color: orangered">AUCTION-ID : #187695</p>
+            <P>PAINTING-NAME: INDIAN RAJASTHANI GIRL PAINTING</P>
+            <P>START-BID: RS.10,999</P>
+            <P>BID-AMOUNT: RS.15,999 </P>
+            <P>BID-WINNER: M.MADHAV</P>
+        </div>
+        <div class="container_3">
+            <p style="color: orangered">AUCTION-ID : #178965</p>
+            <P>PAINTING-NAME: MODERN ACRYLIC WALL PAINTING</P>
+            <P>START-BID: RS.4,599</P>
+            <P>BID-AMOUNT: RS.8,976 </P>
+            <P>BID-WINNER: N.LAKSHMI</P>
+        </div>
+
+        <script>
+             
+let loginBtn = document.getElementsByClassName('loginbtn')[0]; 
+let signupBtn = document.getElementsByClassName('signupbtn')[0]; 
+
+loginBtn.addEventListener('click', function() {
+    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/jsproject/login.html';
+});
+
+signupBtn.addEventListener('click', function() {
+    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/jsproject/signup.html';
+});
+
+             
+    homeLink.addEventListener('click', function() {
+        window.location.href = 'home.html'; 
+    });
+    auctionLink.addEventListener('click', function() {
+        window.location.href = 'activeauction.html'; 
+    });
+    completedLink.addEventListener('click', function() {
+        window.location.href = 'completedauction.html'; 
+    });
+    statusLink.addEventListener('click', function() {
+        window.location.href = 'auctionstatus.html'; 
+    });
+
+    function handleHoverEffect(link) {
+        link.addEventListener('mouseenter', function() {
+            link.classList.add('hover-box');
+        });
+
+        link.addEventListener('mouseleave', function() {
+            link.classList.remove('hover-box');
+        });
+    }
+
+    handleHoverEffect(homeLink);
+    handleHoverEffect(auctionLink);
+    handleHoverEffect(completedLink);
+    handleHoverEffect(statusLink);
+
+
+        </script>
+    
+</body>
+</html>

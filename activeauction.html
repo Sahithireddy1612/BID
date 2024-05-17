@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BID-HOME</title>
+</head>
+<style>
+     body{
+            background-color: cadetblue;
+            overflow: scroll;
+        
+            
+        }
+        .container{
+            height: 70px;
+            width: 1300px;
+            margin-left: 180px;
+            background-color: cornflowerblue;
+            position: sticky;
+            top: 0px;
+            z-index: 100;
+           
+        }
+        .img{
+            height: 90px;
+            width: 100px;
+            margin-top: -20px;
+            position: sticky;
+            top: 0px;
+            z-index: 100;
+
+        }
+       
+        .container_2{
+            height: 100px;
+            width: 1300px;
+            margin-left: 180px;
+            margin-top: 90px;
+            background-color: thistle;
+            position: sticky;
+            top: 70px;
+            z-index: 90;
+        }
+        .loginbtn{
+            height: 40px;
+            width: 80px;
+            color: white;  
+            background-color: chocolate;
+            border-radius: 5px;
+            margin-left: 900px;
+            margin-top: -10px;
+
+        } 
+        .signupbtn{
+            height: 40px;
+            width: 90px;
+            color: white;  
+            background-color: chocolate;
+            border-radius: 5px;
+            margin-left: 900px;
+            margin-top: 10px;
+            z-index: 9999;
+            position: relative;
+        
+        }
+        .nav-link {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-bottom: 30px;
+            z-index: 100;
+            color: white;
+            background-color: thistle;
+            border-radius: 5px;
+            text-decoration: none;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            cursor: pointer; 
+        }
+        .nav-link:hover {
+            background-color: darkorange;
+        }
+        
+        .nav-link.hover-box {
+            background-color: darkorange;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        .n_1{
+          
+            margin-right: 20px;
+            margin-left: -900px;
+            margin-top: 10px;
+
+        }
+        .n_2{
+            background-color: orange;
+            margin-right: 20px;
+        }
+        .n_3{
+            margin-right: 20px;
+        }
+        .painting-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    margin-top: 50px;
+
+    
+}
+.arrow-heading {
+    margin-top: 100px;
+    margin-left: 50px;
+    position: relative;
+    display: inline-block;
+    padding: 10px 100px;
+    background: linear-gradient(75deg, #ff8000, #ffbf00);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.arrow-heading::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right: 15px solid #ffbf00;
+    transform: translateY(-50%);
+}
+
+.painting-card {
+    width: 300px;
+    height: 550px;
+    background-color: lavender;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    z-index: 50;
+}
+
+.painting-card:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.painting-card img {
+    width: 200px;
+    height: 200px;
+    margin-left: 50px;
+    margin-top: 40px;
+    border-radius: 20px;
+    object-fit: cover;
+   
+}
+
+.painting-details {
+    padding: 20px;
+}
+
+.like-icon {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -60px;
+    padding: 50px  50px;
+    border-radius: 0 0 10px 10px;
+    z-index: 60;
+}
+
+ 
+.bid-btn {
+            padding: 5px 25px;
+            background-color: burlywood;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-left: 20px;
+        }
+        
+        .bid-btn:hover {
+            background-color: orange;
+        }
+        
+
+        
+</style>
+<body>
+    <div class="img">
+        <img src="../jsproject/LOGO1.WEBP" style="height: 170px; width: 180px;">
+        </div>
+        <div class="container">
+            <h2 style="color: white; margin-left: 30px; margin-top: -170px;">BID-ONLINE AUCTION PLATFROM</h2>
+            <P style="color: white;margin-left: 30px;">A SECURE TRANSPARENT PLATFORM FOR CONDUCTING ELECTRONIC AUCTIONS RECOGNISED BY THE GOVERNMENT</P>
+            <button class="loginbtn">&#128100; LOGIN</button>
+            <button class="signupbtn">REGISTER</button>
+            <div class="nav-link  n_1" id="homeLink">Home</div>
+            <div class="nav-link  n_2" id="auctionLink">Active Auctions</div>
+            <div class="nav-link  n_3" id="completedLink">Auctions Completed</div>
+            <div class="nav-link  n_4" id="statusLink">Auctions Status</div>
+        </div>
+        <div class="container_2">
+        
+        </div>
+        <div class="arrow-heading">
+            <h2>Auctions</h2>
+        </div>
+    
+       
+        <div class="painting-cards">
+          
+            <div class="painting-card" id="painting1">
+                <img src="../jsproject/painting1.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">VINTAGE ROYAL COUPLE CANVAS</h2>
+                <p style="margin-left: 10px;">Elegance Museum Outlet Old Masters Painting <br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $100</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting1', 100)">Bid</button>
+            </div>
+              
+            
+
+            <div class="painting-card" id="painting2">
+                <img src="../jsproject/painting3.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">ROME MUSEUM CANVAS PAINTING</h2>
+                <p style="margin-left: 10px;">Elegance modern rome museum outlet painting <br> size- 34.75 height X 24 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $130</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting2', 130)">Bid</button>
+        
+            </div>
+
+            <div class="painting-card" id="painting3">
+                <img src="../jsproject/painting4.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">UMBRELLAS MODERN ABSTRACT PAINTING</h2>
+                <p style="margin-left: 10px;">Elegance Abstract Modern Art Painting <br> size- 28 inch height X 24 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 15TH APRIL-20TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $150</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting3', 150)">Bid</button>
+        
+            </div>
+
+            <div class="painting-card" id="painting4">
+                <img src="../jsproject/painting2.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">TWO SISTERS DUTCH CANVAS PAINTING</h2>
+                <p style="margin-left: 10px;">Tamatina Dutch Art Canvas Painting <br> size- 28 inch height X 24 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 12TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $200</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting4', 200)">Bid</button>
+            </div>
+
+            <div class="painting-card" id="painting5">
+                <img src="../jsproject/painting14.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">RADHA KRISHNA HANDPRINTED PAINTING</h2>
+                <p style="margin-left: 10px;">Elegance Handprinted Old Masters Painting <br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 13TH APRIL-18TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $100</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting5', 100)">Bid</button>
+            </div>
+
+            <div class="painting-card" id="painting6">
+                <img src="../jsproject/painting6.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">STILL LIFE FLOWERS CANVAS PAINTING</h2>
+                <p style="margin-left: 10px;">Elegance Dutch Old Outlet Masters Painting <br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $190</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting6', 190)">Bid</button>
+            </div>
+            <div class="painting-card" id="painting7">
+                <img src="../jsproject/painting15.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">ROCKING LADY ART PAINTING</h2>
+                <p style="margin-left: 10px;">Elegance Handprinted Modern Painting <br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $250</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting7', 250)">Bid</button>
+            </div>
+
+            <div class="painting-card" id="painting8">
+                <img src="../jsproject/painting8.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">TOWARDS HIS PLACE PAINTING BY DHAN PRASAD</h2>
+                <p style="margin-left: 10px;">Elegance Painting Acrylic On Canvas<br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 12TH APRIL-19TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $100</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting8', 260)">Bid</button>
+            </div>
+            <div class="painting-card" id="painting9">
+                <img src="../jsproject/painting9.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">FLYING UP PAINTING BY RAHUL MHETRE</h2>
+                <p style="margin-left: 10px;">Elegance Acrylic Canvas Art Painting<br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $150</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting9', 150)">Bid</button>
+            </div>
+
+            <div class="painting-card" id="painting10">
+                <img src="../jsproject/painting10.jpeg" class="Painting 1">
+                <h2 style="margin-left: 10px;">LOTUS IN LAKE PAINTING</h2>
+                <p style="margin-left: 10px;">Elegance Modern Art Painting <br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 15TH APRIL-21TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $160</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting10', 160)">Bid</button>
+            </div>
+
+            <div class="painting-card" id="painting11">
+                <img src="../jsproject/PAINTING11.JPEG" class="Painting 1">
+                <h2 style="margin-left: 10px;">AUTUMN FOREST CANVAS PAINTING</h2>
+                <p style="margin-left: 10px;">Elegance Abstract Modern Painting <br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $200</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting11', 200)">Bid</button>
+            </div>
+            <div class="painting-card" id="painting12">
+                <img src="../jsproject/painting13.webp" class="Painting 1">
+                <h2 style="margin-left: 10px;">7 GOOD LUCK HORSES RAJMER PAINTING</h2>
+                <p style="margin-left: 10px;">Modern Handprinted Painting <br> size- 42 height X 35 width inch</p>
+                <P style="margin-left: 10px;">BID TIMING- 10TH APRIL-15TH APRIL | 12PM IST</P>
+                <p style="margin-left: 10px;">Start Bid: $10</p>
+                <div class="like-icon likeable">&#9825;</div>
+                <button class="bid-btn" onclick="redirectToBiddingPage('painting12', 170)">Bid</button>
+            </div>
+
+           
+        </div>
+        <button class="likedauctionsbtn" id="likedAuctionsBtn">View Liked Auctions</button>
+
+    </div>
+
+
+
+
+        <script>
+             //login and signup buttons
+let loginBtn = document.getElementsByClassName('loginbtn')[0]; 
+let signupBtn = document.getElementsByClassName('signupbtn')[0]; 
+
+loginBtn.addEventListener('click', function() {
+    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/jsproject/login.html';
+});
+
+signupBtn.addEventListener('click', function() {
+    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/jsproject/signup.html';
+});
+
+             // Function to handle click on Home link
+    homeLink.addEventListener('click', function() {
+        window.location.href = 'home.html'; // Redirect to home.html
+    });
+    auctionLink.addEventListener('click', function() {
+        window.location.href = 'activeauction.html'; // Redirect to home.html
+    });
+    completedLink.addEventListener('click', function() {
+        window.location.href = 'completedauction.html'; // Redirect to home.html
+    });
+    statusLink.addEventListener('click', function() {
+        window.location.href = 'auctionstatus.html'; // Redirect to home.html
+    });
+
+    // Hover effects for all links
+    function handleHoverEffect(link) {
+        link.addEventListener('mouseenter', function() {
+            link.classList.add('hover-box');
+        });
+
+        link.addEventListener('mouseleave', function() {
+            link.classList.remove('hover-box');
+        });
+    }
+
+    handleHoverEffect(homeLink);
+    handleHoverEffect(auctionLink);
+    handleHoverEffect(completedLink);
+    handleHoverEffect(statusLink);
+
+
+
+
+    //like button
+const likeIcons = document.querySelectorAll('.like-icon');
+
+// Add click event listener to each like icon
+likeIcons.forEach(icon => {
+    icon.addEventListener('click', () => {
+        // Redirect to signup page when like icon is clicked
+        window.location.href = 'signup.html';
+    });
+});
+const cardButtons = document.querySelectorAll('.bid-btn');
+
+cardButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        // Redirect to signup page when like icon is clicked
+        window.location.href = 'signup.html';
+    });
+});
+
+        </script>
+    
+</body>
+</html>

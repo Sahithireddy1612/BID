@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidding</title>
+</head>
+<style>
+    body{
+           background-color: cadetblue;
+           overflow: scroll;
+       
+           
+       }
+       .container{
+           height: 70px;
+           width: 1300px;
+           margin-left: 180px;
+           background-color: cornflowerblue;
+           position: sticky;
+           top: 0px;
+           z-index: 100;
+          
+       }
+       .img{
+           height: 90px;
+           width: 100px;
+           margin-top: -20px;
+           position: sticky;
+           top: 0px;
+           z-index: 100;
+
+       }
+      
+       .container_2{
+           height: 100px;
+           width: 1300px;
+           margin-left: 180px;
+           margin-top: 90px;
+           background-color: thistle;
+           position: sticky;
+           top: 70px;
+           z-index: 90;
+       }
+      
+       .painting-cards {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 50px;
+   justify-content: center;
+   margin-top: 50px;
+   margin-left: 100px;
+
+   
+}
+.arrow-heading {
+  
+   margin-left: 50px;
+   margin-bottom: 10px;
+   position: relative;
+   display: inline-block;
+   padding: 1px 70px;
+   background: linear-gradient(75deg, #ff8000, #ffbf00);
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+   color: #fff;
+   font-weight: bold;
+   cursor: pointer;
+}
+
+.arrow-heading::before {
+   content: '';
+   position: absolute;
+   left: -30px;
+   top: 50%;
+   width: 0;
+   height: 0;
+   border-top: 15px solid transparent;
+   border-bottom: 15px solid transparent;
+   border-right: 15px solid #ffbf00;
+   transform: translateY(-50%);
+}
+
+.painting-card {
+   width: 300px;
+   height: 550px;
+   margin-bottom: 20px;
+   margin-top: 50px;
+   background-color: lavender;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   overflow: hidden;
+   position: relative;
+   cursor: pointer;
+   z-index: 50;
+}
+
+.painting-card:hover {
+   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.painting-card img {
+   width: 200px;
+   height: 200px;
+   margin-left: 50px;
+   margin-top: 40px;
+   border-radius: 20px;
+   object-fit: cover;
+  
+}
+
+.painting-details {
+   padding: 20px;
+}
+
+.like-icon {
+   color: white;
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-size: 24px;
+   color: #333;
+   cursor: pointer;
+}
+
+.card-buttons {
+   display: flex;
+   justify-content: space-between;
+   margin-top: -60px;
+   padding: 50px  50px;
+   border-radius: 0 0 10px 10px;
+   z-index: 60;
+}
+
+.bid-button,
+.wishlist-button {
+   padding: 8px 12px;
+   background-color: burlywood;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s ease;
+}
+
+.bid-button:hover,
+.wishlist-button:hover {
+   background-color: #555;
+}
+.likeable.liked {
+   color: red;
+}
+.likedauctionsbtn{
+   margin-top: 40px;
+   margin-left: 500px;
+   width: 200px;
+   height: 70px;
+   border-radius: 5px;
+   background-color: #ff8000;
+}
+
+#timerDisplay {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-top: -550px;
+    margin-left: 500px;
+}
+
+#timerValue {
+    color: #ff8000; 
+}
+.bid-form{
+    margin-top: 10px;
+    margin-left: 400px;
+}
+.auction-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+    margin-left: 200px;
+}
+
+.auction-details {
+    width: 60%;
+}
+
+
+.user-info {
+    width: 600px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-left: 400px;
+    margin-top: 50px;
+    display: flex;
+}
+
+
+.user-card {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.user-card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.user-card p {
+    margin-bottom: 5px;
+}
+
+.a_1{
+    width: 250px;
+    border-radius: 20px;
+
+}
+.win-btn{
+    margin-left: 650px;
+    margin-top: 10px;
+}
+
+
+</style>
+<body>
+    <body> 
+        <div class="img">
+            <img src="../jsproject/LOGO1.WEBP" style="height: 170px; width: 180px;">
+            </div>
+            <div class="container">
+                <h2 style="color: white; margin-left: 30px; margin-top: -170px;">BID-ONLINE AUCTION PLATFROM</h2>
+                <P style="color: white;margin-left: 30px;">A SECURE TRANSPARENT PLATFORM FOR CONDUCTING ELECTRONIC AUCTIONS RECOGNISED BY THE GOVERNMENT</P>
+                
+            </div>
+            <div class="container_2">
+            
+            </div>
+            
+               <div id="selectedPainting"></div>
+    <div id="timerDisplay">Time Left: <span id="timerValue">30</span> seconds</div>
+    <form id="bidForm" class="bid-form">
+        <label for="bidAmount" style="color: white;">Your Bid Amount:</label>
+        <input type="number" id="bidAmount" name="bidAmount" required class="a_1">
+        <button type="submit" id="placeBidButton">Place Bid</button>
+    </form>
+    <div id="userBidInfo" class="userInfo"></div>
+    <div class="user-info">
+        
+    </div>
+    <div class="win-btn">
+        <button id="viewWinnerButton">View Winner</button>
+    </div>
+    
+   
+
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            const bidForm = document.getElementById('bidForm');
+            const timerDisplay = document.getElementById('timerValue');
+            const userBidInfo = document.getElementById('userBidInfo');
+            const userContainer = document.querySelector('.user-info');
+            const viewWinnerButton = document.getElementById('viewWinnerButton');
+            let timerCount = 0;
+            let highestBid = 0;
+            let winningUser = '';
+    
+            const users = [
+                { id: '001', name: 'R.Sai Pavan', email: 'sai123@gmail.com', phone: '8234567890', bidAmount: 0 },
+                { id: '002', name: 'P.lavanya', email: 'lavanya16@gmail.com', phone: '9876543210', bidAmount: 0 },
+                { id: '003', name: 'N.Mohith', email: 'mohith312@gmail.com', phone: '6567890321', bidAmount: 0 }
+            ];
+            let currentUserIndex = 0;
+            let timerStarted = false;
+    
+            const selectedCardId = localStorage.getItem('selectedCardId');
+            const selectedCardHTML = localStorage.getItem('selectedCardHTML');
+
+            if (selectedCardId && selectedCardHTML) {
+                const selectedPainting = document.getElementById('selectedPainting');
+                selectedPainting.innerHTML = selectedCardHTML; 
+            }
+
+            function startTimer() {
+                timerStarted = true;
+                let timer = setInterval(() => {
+                    timerCount++;
+                    timerDisplay.textContent = 30 - timerCount;
+                    if (timerCount >= 30) {
+                        clearInterval(timer);
+                        endAuction();
+                    }
+                }, 1000);
+            }
+
+            bidForm.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                if (!timerStarted) {
+                    startTimer();
+                }
+
+                const bidAmount = parseFloat(document.getElementById('bidAmount').value);
+                const startBidAmount = parseFloat(selectedCardHTML.split('$')[1]); 
+                const currentUser = users[currentUserIndex];
+                const userCardId = `userInfo_${currentUser.id}`;
+                const userCard = document.getElementById(userCardId) || createUserCard(userContainer, userCardId, currentUser);
+                const userBidAmount = document.getElementById(`userBidAmount_${currentUser.id}`);
+
+        if (!isNaN(bidAmount) && bidAmount >= startBidAmount) { 
+           
+
+            userBidAmount.textContent = `$${bidAmount}`;
+            currentUser.bidAmount = bidAmount;
+            userCard.style.display = 'block';
+
+            if (bidAmount > highestBid) {
+                highestBid = bidAmount;
+                winningUser = currentUser;
+            }
+
+            currentUserIndex++;
+            if (currentUserIndex >= users.length || timerCount >= 30) {
+                endAuction();
+            }
+
+            if (currentUserIndex >= 3) {
+                checkResultsContainer.style.display = 'block';
+            }
+        } else {
+            alert('Your bid amount must be a valid number and equal to or higher than the start bid amount.');
+        }
+    });
+
+            function endAuction() {
+                if (winningUser !== '') {
+                    alert(`${winningUser.name} wins with the highest bid of $${highestBid}`);
+                    storeWinnerInfo(winningUser);
+                    const winnerInfoContainer = document.getElementById('winnerInfoContainer');
+            winnerInfoContainer.innerHTML = `
+                <h2>Winner Information</h2>
+                <p>Name: ${winningUser.name}</p>
+                <p>Email: ${winningUser.email}</p>
+                <p>Phone: ${winningUser.phone}</p>
+                <p>ID: ${winningUser.id}</p>
+                <p>Bid Amount: $${winningUser.bidAmount.toFixed(2)}</p>
+            `;
+
+            localStorage.setItem('winnerInfo', JSON.stringify(winningUser));
+
+                } else {
+                    alert('No bids received in time interval. First bidder wins.');
+                }
+
+
+            }
+            
+
+            function storeWinnerInfo(winner) {
+    localStorage.setItem('winnerInfo', JSON.stringify(winner));
+}
+
+
+
+viewWinnerButton.addEventListener('click', () => {
+    window.location.href = 'winner.html'; 
+});
+
+
+            function createUserCard(container, cardId, user) {
+                const userCard = document.createElement('div');
+                userCard.id = cardId;
+                userCard.classList.add('user-card');
+                userCard.style.display = 'block';
+
+                const userInfoHTML = `
+                    <h3>${user.name} USER INFO</h3>
+                    <p>Name: ${user.name}</p>
+                    <p>Email: ${user.email}</p>
+                    <p>Phone: ${user.phone}</p>
+                    <p>ID: ${user.id}</p>
+                    <p>Bid Amount: <span id="userBidAmount_${user.id}">$${user.bidAmount}</span></p>
+                `;
+                userCard.innerHTML = userInfoHTML;
+                container.appendChild(userCard);
+
+                return userCard;
+            }
+        });
+
+        
+
+
+            </script>
+            
+</body>
+</html>

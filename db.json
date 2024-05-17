@@ -1,0 +1,75 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "username": "Kaira123",
+      "email": "kaira@gmail.com",
+      "password": "kaira123",
+      "id": 2
+    },
+    {
+      "paintingId": "1234",
+      "startBid": 100,
+      "id": 3
+    },
+    {
+      "paintingId": "1234",
+      "startBid": null,
+      "id": 4
+    },
+    {
+      "paintingId": "1234",
+      "startBid": 100,
+      "id": 5
+    },
+    {
+      "paintingId": "1234",
+      "startBid": null,
+      "id": 6
+    },
+    {
+      "paintingId": "1234",
+      "startBid": 100,
+      "id": 7
+    },
+    {
+      "paintingId": "1234",
+      "startBid": null,
+      "id": 8
+    },
+    {
+      "paintingId": "1234",
+      "bidAmount": 100,
+      "id": 9
+    },
+    {
+      "paintingId": "1234",
+      "bidAmount": 100,
+      "id": 10
+    },
+    {
+      "paintingId": "1234",
+      "bidAmount": 100,
+      "id": 11
+    },
+    {
+      "paintingId": "1234",
+      "bidAmount": 100,
+      "id": 12
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: cadetblue;
+                margin-top: 20px;
+                padding: 20px;
+               
+    
+            }
+           
+           
+            .a5{
+                margin-top: 20px;
+                margin-bottom: 20px;
+                 border: 2px solid black;
+                padding: 5px;
+                width: 200px;
+            
+                margin-left: 20px;
+            }
+            .a4{
+                border: 2px solid black;
+                margin-top: 50px;
+                padding: 5px;
+                width: 200px;
+            
+                margin-left: 20px;
+            }
+            .a6{
+                border: 2px solid black;
+                margin-bottom: 20px;
+                padding: 5px;
+                width: 200px;
+                
+                margin-left: 20px;
+            }
+           
+            .a12{
+                border: 2px solid black;
+                margin-bottom: 20px;
+                padding: 5px;
+                width: 200px;
+                
+    
+            }
+            .a14{
+                border: 2px solid black;
+                margin-bottom: 20px;
+                padding: 5px;
+                width: 200px;
+        
+    
+            }
+            .a8{
+                background-color: coral;
+                width: 100px;
+                border-radius: 20px;
+                margin-left: 50px;
+            }
+            .box{
+                height: 600px;
+                width: 600px;
+                border: 2px solid black;
+                margin-left: 300px;
+                background-color: white;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <img src="../jsproject/LOGO1.WEBP" style=" width: 100px; height: 100px; margin-left: -500px;"/>
+        <h1 style="color: purple; text-align: center; margin-top: -100px; margin-left: 70px;">BID-ONLINE AUCTION PLATFORM</h1>
+        <h2 style="align-items: center; color: blueviolet; margin-left: 5px;">CREATE ACCOUNT</h2>
+        <form id="signupForm">
+            <label class="a1" for="name">Name:</label>
+            <input class="a4" type="text" id="name" name="name" required><br>
+        
+            <label class="a2" for="email">Email:</label>
+            <input class="a5" type="email" id="email" name="email" required><br>
+        
+            <label class="a3" for="phone">Phone:</label>
+            <input class="a6" type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+    
+            <label class="a11" for="username">Username:</label>
+            <input class="a12" type="text" id="username" name="username" required><br>
+    
+            <label class="a13" for="username">Password:</label>
+            <input class="a14" type="password" id="password" name="password" required><br>
+    
+            <input class="a8" type="submit" value="signup"><br/>
+    
+            <p class="form-group">By creating an account, you agree to our <a href="#">Terms of Use</a> and
+                our <a href="#">Privacy Policy</a>.</p>
+            <hr>
+            <p></p>Already have an account? <a href="../jsproject/login.html">Sign in</a></p>
+        </form>
+        </div>
+        
+        <div id="error"></div>
+    
+    <div id="success" class="success" style="display: none;">Registration Successful!</div>
+
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+            const signupForm = document.getElementById("signupForm");
+            let users = JSON.parse(localStorage.getItem("users")) || [];
+
+            signupForm.addEventListener("submit", function(e) {
+                e.preventDefault();
+
+                const formData = new FormData(signupForm);
+                const username = formData.get("username");
+                const email = formData.get("email");
+                const password = formData.get("password");
+
+                const emailExists = users.some(user => user.email === email);
+
+                if (!emailExists) {
+                    const newUser = { username, email, password };
+                    users.push(newUser);
+                    localStorage.setItem("users", JSON.stringify(users));
+                    alert("Registration Successful");
+                    signupForm.reset(); 
+                    window.location.href = "./login.html"
+                } else {
+                    alert("User already exists. Please go to Sign In.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

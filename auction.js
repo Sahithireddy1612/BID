@@ -3,11 +3,11 @@ let loginBtn = document.getElementsByClassName('loginbtn')[0];
 let signupBtn = document.getElementsByClassName('signupbtn')[0]; 
 
 loginBtn.addEventListener('click', function() {
-    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/jsproject/login.html';
+    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/BID/login.html';
 });
 
 signupBtn.addEventListener('click', function() {
-    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/jsproject/signup.html';
+    window.location.href = 'file:///C:/Users/sahit/OneDrive/Attachments/BID/signup.html';
 });
 
 
